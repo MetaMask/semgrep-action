@@ -13,7 +13,7 @@ function runPlaywrightTests(): void {
 // Error message with npx example
 function throwConfigError(): never {
   throw new Error(
-    // This may or may not be caught depending on shell parsing
+    // ruleid: npx-usage-js
     'Please specify a project name with --project flag. Example: npx playwright test --project dummy-test-local'
   );
 }

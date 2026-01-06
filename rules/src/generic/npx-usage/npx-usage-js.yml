@@ -37,11 +37,7 @@ rules:
       as a dependency / devDependency and invoke it using your package manager to ensure version pinning
       and reproducibility.
     patterns:
-      - pattern-either:
-          - pattern: "$CMD"
-          - pattern: |
-              `$CMD`
-      - metavariable-pattern:
-          metavariable: $CMD
-          language: sh
-          pattern: npx ...
+      - pattern: "$STRING"
+      - metavariable-regex:
+          metavariable: $STRING
+          regex: '.*\bnpx\s'

@@ -17,10 +17,10 @@ function lintCode() {
 }
 
 // String literal in error message (like global.setup.ts:72)
-// This won't be caught because "Example: npx..." doesn't parse as shell command starting with npx
+// Now caught with regex - flags npx usage anywhere in strings including docs/examples
 function throwError() {
   throw new Error(
-    // ok: npx-usage-js
+    // ruleid: npx-usage-js
     'Please specify a project name with --project flag. Example: npx playwright test --project dummy-test-local'
   );
 }
